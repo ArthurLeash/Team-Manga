@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Bot = new Discord.Client()
+const bot = new Discord.Client()
 const cfg = process.env.token
 const prefix = ("/")
 
