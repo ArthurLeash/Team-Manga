@@ -8,7 +8,7 @@ bot.on('ready' , async () => {
     bot.user.setActivity("Regarder des Mangas")
 });
 
-bot.on('guildMemberadd' , member => {
+bot.on('guildMemberAdd' , member => {
     member.createDM().then(channel => {
         return channel.send('bienvenue sur le serveur' + member.displayName)
         console.log('$(member.displayName) a rejoint le serveur')
