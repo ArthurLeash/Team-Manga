@@ -5,12 +5,6 @@ const prefix = ("/")
 
 bot.on(' ready' , function () {
     console.log(" je suis prêt a être utilisé. ")
-})
-
-
-
-bot.on(' ready' , function () {
-    console.log(" je suis prêt a être utilisé. ")
     bot.user.setActivity("Regarder des Mangas").catch(console.error)
 });
 
@@ -25,4 +19,5 @@ bot.on('message' , msg => {
     if(msg.content === "bonjour")
     msg.reply("Ohayô.")
 });
+
 bot.login(cfg);
