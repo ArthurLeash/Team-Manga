@@ -3,9 +3,9 @@ const bot = new Discord.Client()
 const cfg = process.env.token
 const prefix = ("/")
 
-bot.on(' ready' , function () {
+bot.on('ready' , async () => {
     console.log(" je suis prêt a être utilisé. ")
-    bot.user.setActivity("Regarder des Mangas").catch(console.error)
+    bot.user.setActivity("Regarder des Mangas")
 });
 
 bot.on('guildMemberadd' , member => {
