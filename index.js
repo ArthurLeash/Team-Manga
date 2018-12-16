@@ -20,6 +20,9 @@ bot.on('message' , msg => {
     msg.reply("Ohayô.")
 });
 
-
+bot.on('message' , msg => {
+    if(msg.content === "/info")
+    msg.reply("je suis actuellement en codage par Arthur Leash")
+})
 
 bot.login(cfg);
