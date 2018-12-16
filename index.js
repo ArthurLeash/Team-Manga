@@ -25,4 +25,10 @@ bot.on('message' , msg => {
     msg.reply("je suis actuellement en codage par Arthur Leash")
 })
 
+bot.on('message' , msg => {
+    if(msg.content === "/help")
+    msg.reply("les commandes dispnibles sont:")
+    msg.reply("/info afin de donner des informations peu utile sur le bot")
+})
+
 bot.login(cfg);
