@@ -27,8 +27,7 @@ bot.on('message' , msg => {
 
 bot.on('message' , msg => {
     if(msg.content === "/help")
-    msg.reply("les commandes dispnibles sont:")
-    msg.reply("/info afin de donner des informations peu utile sur le bot")
+    msg.reply("les commandes dispnibles sont: /info afin de donner des informations peu utile sur le bot")
 })
 
 bot.login(cfg);
