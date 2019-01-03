@@ -1,20 +1,19 @@
-const prefix = ("/")
-
-module.exports =class ban {
-    static match (message){
-        return message.content.startsWith('!ban')
+module.exports = class {
+ 
+    static check (msg){
+        return msg.content.startsWith('.ban')
     }
-    static action (message) {
-        const args = msg.content.slice(prefix.length).split(/ +/)
-        const command = args.shift().tolowerCase()
-       // if (command === "ban"){
-        if(!message.member.permissions.has('ADMINISTRATOR')) return message.reply('tu n\'est pas administateur du serveur !')
-        const member = message.mentions.members.first();
-        if (!member) return message.reply('commande invalid, il faut mettre `/ban @user#1234`')
+ 
+    static action (msg) {
+        const args = msg.content.slice(1).split(/ +/)
+        const command = args.shift().toLowerCase()
+        if(!msg.member.permissions.has('ADMINISTRATOR')) return msg.reply('Tu n\'es pas administateur du serveur !')
+        let member = msg.mentions.members.first();
+        if (!member) return msg.reply('Utilisateur non trouvé :\'(')
         member.ban({
             days: args[1] || null,
-reason: `Banni par ${message.author.tag}`
-        });
+            reason: `Banni par ${msg.author.tag}`
+        })
     }
-  }
-       
+ 
+}
