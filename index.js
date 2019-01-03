@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
-const ban = require('./bans/ban')
+const ban = require('./kick et ban/ban')
 const http = require('http')
 const cfg = require('./index.json')
  
