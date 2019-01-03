@@ -1,40 +1,58 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
+const ban = require('./bans/ban')
+const http = require('http')
 const cfg = require('./index.json')
-const giphy = require('giphy')('7XnyOQobDV75nO1D6VFdiYWZOPTPGhIJ')
-const ban = require('./bans/ban');
- 
-let prefix = "/"
  
 bot.on('ready' , function () {
-    console.log(" je suis prêt a être utilisé. ")
-    bot.user.setActivity("Regarder des Mangas").catch(console.error)
+    bot.user.setActivity("regarde des Mangas").catch(console.error)
 });
  
-bot.on('guildMemberadd' , member => {
+bot.on('guildMemberAdd' , member => {
     member.createDM().then(channel => {
         return channel.send('bienvenue sur le serveur' + member.displayName)
-        console.log('$(member.displayName) a rejoint le serveur')
+        console.log('$(member.displayName) a rejoint le serveur !')
     }).catch(console.error)
 });
  
-bot.on('message', function (message){
-    if(message.match("/^\.ban .+$/")){
-        return ban.action(message)
+bot.on('message', function (msg){
+    if(ban.check(msg)){
+        return ban.action(msg)
     }
  
     if(msg.content === "bonjour"){
         msg.reply("Ohayô.")
     }
  
-    if(msg.content === ".hug"){
-        msg.reply("Trop kawaiii !", {
-            file: giphy.search('hug manga')
+    if(msg.content.startsWith('.hug')){
+        const args = msg.content.slice(1).split(/ +/)
+        const command = args.shift().toLowerCase()
+        let member = msg.mentions.members.first();
+        if(!member){
+            member = msg.author
+            msg.author = "Le bot"
+        }
+        http.get("http://api.giphy.com/v1/gifs/search?q=manga%20hug&api_key=7XnyOQobDV75nO1D6VFdiYWZOPTPGhIJ&limit=100", res => {
+            res.setEncoding = "utf-8"
+            let body = ""
+            res.on('data', data => {
+                body += data
+            })
+            res.on('end', () => {
+                body = JSON.parse(body)
+                msg.channel.send( member + ", " + msg.author + " te fait un calin", {
+                    embed: {
+                        image: {
+                            url: body.data[Math.floor(Math.random() * 101)].images.original.url
+                        }
+                    }
+                })
+            })
         })
     }
  
     if(msg.content === ".info"){
-        msg.reply("je suis actuellement en codage par Arthur Leash")
+        msg.reply("<@199461673344565248> est le best :)")
     }
  
     if(msg.content === ".help"){
