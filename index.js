@@ -52,7 +52,7 @@ bot.on('message', function (msg){
     }
  
     if(msg.content === ".info"){
-        msg.reply("<@410834985738567680> est mon propriétaire  :)")
+        msg.reply("<@410834985738567680> est mon propriétaire  :) \n/ @here Beaucoup de mise a jour sont a prévoir")
     }
  
     if(msg.content === ".help"){
