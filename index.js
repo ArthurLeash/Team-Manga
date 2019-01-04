@@ -52,7 +52,7 @@ bot.on('message', function (msg){
     }
  
     if(msg.content === ".info"){
-        msg.reply("<@199461673344565248> est le best :)")
+        msg.reply("<@410834985738567680> est mon propriétaire  :)")
     }
  
     if(msg.content === ".help"){
