@@ -102,7 +102,7 @@ bot.on('message', function (msg){
             })
         })
 }
-   if(msg.content.startsWith('.pleure')){
+   if(msg.content.startsWith('.cry')){
         const args = msg.content.slice(1).split(/ +/)
         const command = args.shift().toLowerCase()
         let member = msg.mentions.members.first();
@@ -133,15 +133,12 @@ bot.on('message', function (msg){
     }
  
     if(msg.content === ".help"){
-        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionner")
-    }
+        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionner
  
     if(msg.content === ".staff"){
         msg.reply("les commandes disponibles sont:\n.ban @xx#0000 afin de bannir la personne mentionner")
     }
-   if(msg.content === ".tachercher"){
-        msg.reply(".ban <@261159299651207168>")
-    }
+  
 })
  
 
