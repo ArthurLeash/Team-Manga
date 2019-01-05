@@ -129,11 +129,11 @@ bot.on('message', function (msg){
         })
 }
     if(msg.content === ".info"){
-        msg.reply("Ce Bot a été fait par la TeamPaul\n @here Beaucoup de mise a jour sont a prévoir sur les commandes")
+        msg.reply("Ce Bot a été fait par la TeamPaul\n***Si vous avez un problème avec le bot rejoignez le serveur de support https://discord.gg/ANd3aTS***")
     }
  
     if(msg.content === ".help"){
-        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionner
+        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionné")
  
     if(msg.content === ".staff"){
         msg.reply("les commandes disponibles sont:\n.ban @xx#0000 afin de bannir la personne mentionner")
