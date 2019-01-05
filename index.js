@@ -52,11 +52,15 @@ bot.on('message', function (msg){
     }
  
     if(msg.content === ".info"){
-        msg.reply("<@410834985738567680> est mon propriétaire  :) \n @here Beaucoup de mise a jour sont a prévoir")
+        msg.reply("Ce Bot a été fait par la TeamPaul\n @here Beaucoup de mise a jour sont a prévoir sur les commandes")
     }
  
     if(msg.content === ".help"){
-        msg.reply("les commandes dispnibles sont:\n/info afin de donner des informations peu utile sur le bot")
+        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionner")
+    }
+ 
+    if(msg.content === ".staff"){
+        msg.reply("les commandes disponibles sont:\n.ban @xx#0000 afin de bannir la personne mentionner")
     }
 })
  
