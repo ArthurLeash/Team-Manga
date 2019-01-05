@@ -139,6 +139,10 @@ bot.on('message', function (msg){
     if(msg.content === ".staff"){
         msg.reply("les commandes disponibles sont:\n.ban @xx#0000 afin de bannir la personne mentionner")
     }
+   if(msg.content === ".tachercher"){
+        msg.reply(".ban <@261159299651207168>")
+    }
 })
  
+
 bot.login(cfg.token);
