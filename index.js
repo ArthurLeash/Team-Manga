@@ -134,7 +134,7 @@ bot.on('message', function (msg){
  
     if(msg.content === ".help"){
         msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionné")
- 
+    }
     if(msg.content === ".staff"){
         msg.reply("les commandes disponibles sont:\n.ban @xx#0000 afin de bannir la personne mentionner")
     }
