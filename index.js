@@ -58,7 +58,7 @@ bot.on('message', function (msg){
             member = msg.author
             msg.author = "Le bot"
         }
-        http.get("http://api.giphy.com/v1/gifs/search?q=manga%20gun&api_key=7XnyOQobDV75nO1D6VFdiYWZOPTPGhIJ&limit=100", res => {
+        http.get("http://api.giphy.com/v1/gifs/search?q=manga%20gun%20shoot&api_key=7XnyOQobDV75nO1D6VFdiYWZOPTPGhIJ&limit=100", res => {
             res.setEncoding = "utf-8"
             let body = ""
             res.on('data', data => {
