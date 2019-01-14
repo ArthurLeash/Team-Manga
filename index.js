@@ -161,7 +161,7 @@ bot.on('message', function (msg){
     }
  
     if(msg.content === ".help"){
-        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionné\n.kiss afin de faire un bisous a la personne mentionnée\n.kill afin de tuer la personne mentionnéé")
+        msg.reply("les commandes disponibles sont:\n.info afin de donner des informations peu utile sur le bot\n.hug @x afin de faire un calin a la personne mentionné\n.kiss afin de faire un bisous a la personne mentionnée\n.kill afin de tuer la personne mentionnée\n.fuck afin de faire un Fuck a la personne mentionner")
     }
  
     if(msg.content === ".staff"){
