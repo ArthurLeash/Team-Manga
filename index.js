@@ -50,6 +50,34 @@ bot.on('message', function (msg){
             })
         })
     }
+    
+    if(msg.content.startsWith('.fuck')){
+        const args = msg.content.slice(1).split(/ +/)
+        const command = args.shift().toLowerCase()
+        let member = msg.mentions.members.first();
+        if(!member){
+            member = msg.author
+            msg.author = "Le bot"
+        }
+        http.get("http://api.giphy.com/v1/gifs/search?q=middle%20finger&api_key=7XnyOQobDV75nO1D6VFdiYWZOPTPGhIJ&limit=100", res => {
+            res.setEncoding = "utf-8"
+            let body = ""
+            res.on('data', data => {
+                body += data
+            })
+            res.on('end', () => {
+                body = JSON.parse(body)
+                msg.channel.send( member + ", " + msg.author + " t'emmerde", {
+                    embed: {
+                        image: {
+                            url: body.data[Math.floor(Math.random() * 101)].images.original.url
+                        }
+                    }
+                })
+            })
+        })
+
+}
      if(msg.content.startsWith('.kill')){
         const args = msg.content.slice(1).split(/ +/)
         const command = args.shift().toLowerCase()
