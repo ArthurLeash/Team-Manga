@@ -168,7 +168,7 @@ if(msg.content.startsWith('.pat')){
         })
     })
 }
-if(msg.content.startsWith('.Neko')){
+if(msg.content.startsWith('.neko')){
     const args = msg.content.slice(1).split(/ +/)
     const command = args.shift().toLowerCase()
     let member = msg.mentions.members.first();
